@@ -205,18 +205,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     </div>
     <div class="ptab" onclick="switchTab('spl')">
       <div class="ptab-ico">🛡️</div>
-      <div class="ptab-lbl">Smartlink Protection</div>
-      <div class="ptab-sub">Protection Life</div>
+      <div class="ptab-lbl">Smartlink Protection Life</div>
+      <div class="ptab-sub">Unit-Link</div>
     </div>
     <div class="ptab" onclick="switchTab('legacy')">
       <div class="ptab-ico">🏛️</div>
       <div class="ptab-lbl">Legacy</div>
-      <div class="ptab-sub">Warisan & Investasi</div>
+      <div class="ptab-sub">(SOON)</div>
     </div>
     <div class="ptab" onclick="switchTab('bundling')">
       <div class="ptab-ico">📦</div>
       <div class="ptab-lbl">Bundling</div>
-      <div class="ptab-sub">Paket Kombinasi</div>
+      <div class="ptab-sub">(SOON)</div>
     </div>
   </div>
 
@@ -877,7 +877,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
           <div class="vpill"><div class="vpill-ico">🤝</div><div><div class="vpill-lbl">Fleksibel</div><div class="vpill-txt">Pilih paket sesuai kebutuhan dan kemampuan finansial saat ini.</div></div></div>
         </div>
         <div class="tbl-wrap fade d3"><table class="ctbl"><thead><tr><th>Manfaat</th><th id="bun-th1">Opsi 1</th><th id="bun-th2">Opsi 2</th><th id="bun-th3">Opsi 3</th></tr></thead><tbody id="bundling-tbody"></tbody></table></div>
-        <div class="res-ft"><div class="ft-disc">Perbandingan ini disiapkan oleh agen Allianz. Detail manfaat mengacu pada kontrak polis yang berlaku.</div><div class="ft-date" id="bundling-ft-date">—</div></div>
+        <div class="res-ft"><div class="ft-disc">Perbandingan ini disiapkan oleh agen Allianz Anda. Detail manfaat mengacu pada kontrak polis yang berlaku.</div><div class="ft-date" id="bundling-ft-date">—</div></div>
       </div>
       <div class="act-btns">
         <button class="btn-act btn-reset" onclick="resetResult('bundling')">↩ Edit</button>
@@ -989,7 +989,6 @@ function generateCI(){
     html+=`<td>
       <div class="cv">${rp(o.premi)}</div>
       <div class="csub">${frekLabel(o.frek)} · Bayar ${o.mp} Tahun</div>
-      <div class="cnote">Total premi: ${rp(tp)}</div>
     </td>`;
   });
   html+='</tr>';
@@ -1014,7 +1013,6 @@ function generateCI(){
     const bonusNote=isAcp?'Aktif 50% mulai Tahun ke-2':'Aktif 50% sejak awal polis';
     html+=`<td>
       <div class="cv">${rp(bonusVal)}</div>
-      <div class="csub">${isAcp?'ACP 50%':'Hasanah Booster'}</div>
       <div class="cnote">${bonusNote}</div>
     </td>`;
   });
@@ -1046,13 +1044,13 @@ function generateCI(){
       const jiwaVal=tp*1.5;
       html+=`<td>
         <div class="cv">s.d. ${rp(jiwaVal)}</div>
-        <div class="csub">ACP 150% dari total premi dibayar</div>
+        <div class="csub">150% dari total premi dibayar</div>
         <div class="csub">Keluarga tetap melanjutkan hidup dengan standar yang sama.</div>
       </td>`;
     } else {
       html+=`<td>
         <div class="cv">${rp(o.up)}</div>
-        <div class="csub">Hasanah — mengikuti UP Kritis</div>
+        <div class="csub">Mengikuti UP Kritis</div>
         <div class="csub">Keluarga tetap melanjutkan hidup dengan standar yang sama.</div>
       </td>`;
     }
@@ -1070,7 +1068,7 @@ function generateCI(){
         <div class="csub">Jika sehat, dikembalikan di tahun ke-20.</div>
       </td>`;
     } else {
-      html+=`<td><div class="w-no">✘ Tidak Aktif</div></td>`;
+      html+=`<td><div class="w-no">✘ Tidak Tersedia</div></td>`;
     }
   });
   html+='</tr>';
