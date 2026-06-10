@@ -541,7 +541,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
           <div class="vpill"><div class="vpill-ico">✅</div><div><div class="vpill-lbl">Bebas Premi</div><div class="vpill-txt">Perlindungan tetap aktif meski kondisi keuangan berubah.</div></div></div>
         </div>
         <div class="tbl-wrap fade d3"><table class="ctbl"><thead><tr><th>Manfaat</th><th>Opsi 1</th><th>Opsi 2</th><th>Opsi 3</th></tr></thead><tbody id="spl-tbody"></tbody></table></div>
-        <div class="res-ft"><div class="ft-disc">Perbandingan ini disiapkan oleh agen Allianz. Detail manfaat mengacu pada kontrak polis yang berlaku.</div><div class="ft-date" id="spl-ft-date">—</div></div>
+        <div class="res-ft"><div class="ft-disc">Perbandingan ini disiapkan oleh agen Alliaz Anda. Detail manfaat mengacu pada kontrak polis yang berlaku.</div><div class="ft-date" id="spl-ft-date">—</div></div>
       </div>
       <div class="act-btns">
         <button class="btn-act btn-reset" onclick="resetResult('spl')">↩ Edit</button>
@@ -1074,7 +1074,6 @@ function generateSPL(){
   const opts=[1,2,3].map(i=>({
     premi: nv('spl-p'+i),
     frek:  sv('spl-f'+i),
-    mp:    parseInt(sv('spl-mp'+i)),
     jiwa:  nv('spl-j'+i),
     kritis:nv('spl-k'+i),
     acc:   nv('spl-a'+i),
@@ -1090,11 +1089,10 @@ function generateSPL(){
   html+='<tr>';
   html+='<td><div class="row-lbl"><span>💵</span>Premi & Frekuensi</div></td>';
   opts.forEach(o=>{
-    const tp=totalPremi(o.premi,o.frek,o.mp);
+    const tp=totalPremi(o.premi,o.frek,0);
     html+=`<td>
       <div class="cv">${rp(o.premi)}</div>
-      <div class="csub">${frekLabel(o.frek)} · Bayar ${o.mp} Tahun</div>
-      <div class="cnote">Total premi: ${rp(tp)}</div>
+      <div class="csub">${frekLabel(o.frek)}</div>
     </td>`;
   });
   html+='</tr>';
