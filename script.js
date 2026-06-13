@@ -15,7 +15,7 @@ async function checkUpdate(v) {
       alert('Sudah versi terbaru');
     }
   } catch (e) {
-    alert('Gagal cek update');
+    alert('Update tidak ditemukan');
   }
 }
 // ════════════════════════════════════
