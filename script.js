@@ -315,16 +315,16 @@ function generateStd() {
 
     // Title & vpills
     const types = [...new Set(opts.map(o => o.type))];
-    const tnames = { spl: 'Smartlink Protection Life', ci: 'Critical Illness', legacy: 'Legacy' };
+    const tnames = { 'Smartlink Protection Life', 'Critical Illness', 'Legacy' };
     g('std-res-title').textContent = 'Perbandingan Opsi Proteksi';
     const pillsHtml = {
-        spl: `<div class="vpill"><div class="vpill-ico">🛡️</div><div><div class="vpill-lbl">Proteksi Jiwa</div><div class="vpill-txt">Keluarga tetap melanjutkan hidup tanpa menurunkan standar.</div></div></div>`,
-        ci: `<div class="vpill"><div class="vpill-ico">🏥</div><div><div class="vpill-lbl">Penyakit Kritis</div><div class="vpill-txt">Biaya pengobatan tidak membebani keuangan keluarga.</div></div></div>`,
-        legacy: `<div class="vpill"><div class="vpill-ico">🏛️</div><div><div class="vpill-lbl">Warisan Terencana</div><div class="vpill-txt">Pastikan aset dan nilai hidup diwariskan dengan bermartabat.</div></div></div>`,
+        `<div class="vpill"><div class="vpill-ico">🛡️</div><div><div class="vpill-lbl">Proteksi Jiwa</div><div class="vpill-txt">Keluarga tetap dapat melanjutkan hidup tanpa menurunkan standar kualitas hidup.</div></div></div>`,
+        `<div class="vpill"><div class="vpill-ico">🏥</div><div><div class="vpill-lbl">Penyakit Kritis</div><div class="vpill-txt">Aset dan keuangan tetap terjaga, Masalah Finansial tidak merugikan keluarga.</div></div></div>`,
+        `<div class="vpill"><div class="vpill-ico">🏛️</div><div><div class="vpill-lbl">Warisan Terencana</div><div class="vpill-txt">Pastikan aset dan nilai hidup keluarga diwariskan dengan bermartabat.</div></div></div>`
     };
     g('std-vpills').innerHTML = types.map(t => pillsHtml[t]).join('');
     g('std-res-sub').textContent = 'Dibuat pada ' + hariIni();
-    g('std-ft-date').textContent = 'Digenerate: ' + hariIni() + ' | Allianz Indonesia';
+    g('std-ft-date').textContent = hariIni() + ' | Revolve Agency ';
     g('std-tbody').innerHTML = html;
     showResult('std');
 }
